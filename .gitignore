@@ -7,3 +7,6 @@ tweets-covid-19.csv
 /.idea
 /__pycache__
 .pyc 
+
+# ignore test dataset in the folder
+/test_data
