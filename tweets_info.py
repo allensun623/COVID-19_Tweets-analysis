@@ -3,7 +3,7 @@ from settings import token
 import numpy as np
 import pandas as pd
 import os
-
+import datetime
 
 class TweetsKeyword():
     def __init__(self, token, file_name, keywords):
@@ -16,7 +16,7 @@ class TweetsKeyword():
         Finding Tweets Using a Keyword
         """
         # write in to file
-        file_name = self.file_name
+        file = self.file_name
         api = self.api_token(self.token)
         #columns of the csv file
         cols = ['screen_name', # user id
@@ -39,15 +39,23 @@ class TweetsKeyword():
                                 tweet_mode='extended') 
 
         for page in results.pages():
+            # every 100 pages, store as a single file with timeline
+            # it would take long time to read and write a large dataset
+            if count_pages / 100 == 0: 
+                # under the data folder 'tweets'
+                file_name = 'tweets/' + str(datetime.datetime.now()) + '_' + self.file_name 
+
             # open local file
             if os.path.exists(file_name):
                 df = pd.read_csv(file_name, header=0)
             else:
                 df = pd.DataFrame(columns=cols)
+            
             # initial entry dictionary
             new_entry = {}
             for i in cols:
                 new_entry[i] = []
+            
             # collect data
             for status in page:
                 count_tweets += 1
@@ -62,12 +70,12 @@ class TweetsKeyword():
                 location = status.user.location
                 created_at = status.created_at
                 hashtags = ", ".join([t['text'] for t in status.entities['hashtags'] if len(t) > 0])
-                print("text: \n %s" % text)
-                print("source: %s" % status.source)
                 print("screen_name: %s" % screen_name)
-                print("location: %s" % location)
                 print("created_at: %s" % created_at)
+                print("location: %s" % location)
+                print("source: %s" % status.source)
                 print("hashtags: %s" % hashtags)
+                print("=======text: \n %s" % text)
                 new_entry['screen_name'].append(screen_name)
                 new_entry['created_at'].append(created_at)
                 new_entry['location'].append(location)

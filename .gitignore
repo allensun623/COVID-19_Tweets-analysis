@@ -1,3 +1,7 @@
-
 # ignore test csv file
 tweets-covid-19.csv
+
+
+#.DS_Store
+/.DS_Store
+.pyc

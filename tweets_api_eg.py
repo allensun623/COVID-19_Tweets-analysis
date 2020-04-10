@@ -1,3 +1,7 @@
+# Source
+# https://chatbotslife.com/twitter-data-mining-a-guide-to-big-data-analytics-using-python-4efc8ccfa219
+
+
 import tweepy
 from settings import token
 import numpy as np
