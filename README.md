@@ -28,15 +28,15 @@ keywords = ['COVID-19', 'COVID19', 'coronavirus', 'coronaVirus']
 
 - **[tweets_info.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/tweets_info.py)** is class to collect tweets
 
-- Columns we will collect, chang the `cols` in  `tweets_info.py` to get more information from each single tweet.
-```
-#columns of the csv file
-cols = ['screen_name', # user id
-        'created_at', # tweet created time
-        'location', # location
-        'source', # tweet source: phone, web, ...
-        'hashtags', 
-        'text']
-```
+    - Columns we will collect, chang the `cols` in  `tweets_info.py` to get more information from each single tweet.
+    ```
+    #columns of the csv file
+    cols = ['screen_name', # user id
+            'created_at', # tweet created time
+            'location', # location
+            'source', # tweet source: phone, web, ...
+            'hashtags', 
+            'text']
+    ```
 
 ## Data Analysis
