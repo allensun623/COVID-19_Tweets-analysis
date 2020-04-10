@@ -39,11 +39,13 @@ class TweetsKeyword():
                                 tweet_mode='extended') 
 
         for page in results.pages():
+            # folder = 'tweets/' # folder for dataset we want to use
+            folder = 'test_data/' # folder for dataset test purpose. 
             # every 100 pages, store as a single file with timeline
             # it would take long time to read and write a large dataset
             if count_pages % 100 == 0: 
                 # under the data folder 'tweets'
-                file_name = 'tweets/' + str(datetime.datetime.now()) + '_' + self.file_name 
+                file_name = folder + str(datetime.datetime.now()) + '_' + self.file_name 
 
             # open local file
             if os.path.exists(file_name):
