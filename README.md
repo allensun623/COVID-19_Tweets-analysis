@@ -5,7 +5,7 @@
 ### Examples
 Under the file
 **[tweets_api_eg.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/tweets_api_eg.py)**
-There are three example of collect tweets
+There are three examples of collecting tweets
 - Example 1: Your Timeline
 - Example 2: Tweets from a Specific User
 - Example 3: Finding Tweets Using a Keyword
@@ -37,3 +37,5 @@ cols = ['screen_name', # user id
         'hashtags', 
         'text']
 ```
+
+## Data Analysis

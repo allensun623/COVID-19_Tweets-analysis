@@ -2,6 +2,8 @@
 tweets-covid-19.csv
 
 
-#.DS_Store
+# ignore irrelevant folders and files
 /.DS_Store
-.pyc
+/.idea
+/__pycache__
+.pyc 
