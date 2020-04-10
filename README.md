@@ -11,7 +11,7 @@ There are three example of collect tweets
 - Example 3: Finding Tweets Using a Keyword
 
 ### Main class
-In the python file **[main.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/main.py)**, set `api token`, `file name`, and `keywords`.
+In the python file **[main.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/main.py)**, set `api token`, `file name`, and `keywords`. Run `main.py` to collect tweets with keywords.
 ```
 # api token
 api_token = token
