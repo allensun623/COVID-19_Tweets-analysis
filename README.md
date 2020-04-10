@@ -44,4 +44,4 @@ keywords = ['COVID-19', 'COVID19', 'coronavirus', 'coronaVirus']
 
 ## Notes
 - It took me 3 hours to collect round 150K tweets, and the timeline showed that these tweets were posted within just past 1 hours. It means people are posting tweets much faster than we collecting them. 
-- What else infomation should we collect from a each single tweet? Above cols shows what we want to extract so far.
+- What else infomation should we extract from a each single tweet? Above `cols` shows what we want to extract so far.
