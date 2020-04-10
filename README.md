@@ -1,6 +1,6 @@
 # COVID-19_Tweets-analysis
 
-## tweets collecting
+## TWEETS Collecting
 
 ### Examples
 Under the file
@@ -26,7 +26,8 @@ In the **[settings.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blo
 
 
 **[tweets_info.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/tweets_info.py)** is class to collect tweets
-columns we will collect, chang the `cols` in  `tweets_info.py` to get more information from each single tweet.
+
+Columns we will collect, chang the `cols` in  `tweets_info.py` to get more information from each single tweet.
 ```
 #columns of the csv file
 cols = ['screen_name', # user id
