@@ -41,7 +41,7 @@ class TweetsKeyword():
         for page in results.pages():
             # every 100 pages, store as a single file with timeline
             # it would take long time to read and write a large dataset
-            if count_pages / 10 == 0: 
+            if count_pages % 100 == 0: 
                 # under the data folder 'tweets'
                 file_name = 'tweets/' + str(datetime.datetime.now()) + '_' + self.file_name 
 
@@ -91,8 +91,6 @@ class TweetsKeyword():
             print("================================================")
             print("Total pages finished so far: %i" % count_pages)
             print("Total tweets colleted so far: %i" % count_tweets)
-            print("if count_pages / 10 == 0")
-            print(if (count_pages/10 == 0))
             # write data into file
             csv_file = open(file_name, 'a' ,encoding='utf-8')
             tweet_page_df.to_csv(csv_file, mode='a', columns=cols, index=False, encoding="utf-8")

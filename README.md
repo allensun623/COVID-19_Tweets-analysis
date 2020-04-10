@@ -40,3 +40,7 @@ keywords = ['COVID-19', 'COVID19', 'coronavirus', 'coronaVirus']
     ```
 
 ## Data Analysis
+
+
+## Notes
+- It took me 3 hours to collect round 150K tweets, and the timeline showed that these tweets were posted within just past 1 hours. It means people are posting tweets much faster than we collecting them. 
