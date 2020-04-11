@@ -19,7 +19,7 @@ api_token = token
 # write in to file
 file_name = 'tweets-covid-19.csv'
 # search keyword
-keywords = ['COVID-19', 'COVID19', 'coronavirus', 'coronaVirus']
+keywords = ['COVID-19', 'COVID19', 'Covid_19', 'CoronavirusPandemic', 'CoronavirusOutbreak','CoronaVirusUpdate']
 ```
 
 - In the **[settings.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/settings.py)**, you can use your own token.

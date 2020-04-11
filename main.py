@@ -8,7 +8,12 @@ def main():
     # write in to file
     file_name = 'tweets-covid-19.csv'
     # search keyword
-    keywords = ['COVID-19', 'COVID19', 'coronavirus', 'coronaVirus']
+    keywords = ['COVID-19', 
+                'COVID19', 
+                'Covid_19', 
+                'CoronavirusPandemic', 
+                'CoronavirusOutbreak', 
+                'CoronaVirusUpdate']
     tweets = TweetsKeyword(api_token, file_name, keywords)
     tweets.collect_info()
 
