@@ -18,8 +18,11 @@ There are three examples of collecting tweets:
 api_token = token
 # write in to file
 file_name = 'tweets-covid-19.csv'
+# folder to store your collected data
+folder = 'test_data'
 # search keyword
-keywords = ['COVID-19', 'COVID19', 'Covid_19', 'CoronavirusPandemic', 'CoronavirusOutbreak','CoronaVirusUpdate']
+# 'COVID-19', 'COVID19', 'Covid_19', 'CoronavirusPandemic', 'CoronavirusOutbreak','CoronaVirusUpdate'
+keywords = ['COVID']
 ```
 
 - In the **[settings.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/settings.py)**, you can use your own token.

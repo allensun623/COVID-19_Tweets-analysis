@@ -7,14 +7,11 @@ def main():
     api_token = token
     # write in to file
     file_name = 'tweets-covid-19.csv'
+    # folder to store your collected data
+    folder = 'test_data'
     # search keyword
-    keywords = ['COVID-19', 
-                'COVID19', 
-                'Covid_19', 
-                'CoronavirusPandemic', 
-                'CoronavirusOutbreak', 
-                'CoronaVirusUpdate']
-    tweets = TweetsKeyword(api_token, file_name, keywords)
+    keywords = ['COVID']
+    tweets = TweetsKeyword(api_token, keywords, folder, file_name)
     tweets.collect_info()
 
 if __name__ == '__main__':
