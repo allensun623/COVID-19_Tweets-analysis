@@ -44,7 +44,7 @@ class TweetsKeyword():
             # it would take long time to read and write a large dataset
             if count_pages % 100 == 0: 
                 # under the data folder + time + file name
-                file_name = self.folder + '/' + str(datetime.datetime.now()) + '_' + self.file_name 
+                file_name = self.folder + '/' + str(datetime.datetime.now().strftime("%Y-%m-%dT%H-%M")) + '_' + self.file_name 
 
             # open local file
             if os.path.exists(file_name):
