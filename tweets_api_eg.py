@@ -85,14 +85,20 @@ def keywords(api):
             screen_name = status.user.screen_name
             source = status.source
             location = status.user.location
+            try:
+                print("place: ", status.place)
+            except:
+                print("coordinates: ", status.coordinates)
             created_at = status.created_at
             hashtags = ", ".join([t['text'] for t in status.entities['hashtags'] if len(t) > 0])
+            
             print("text: \n %s" % text)
             print("source: %s" % status.source)
             print("screen_name: %s" % screen_name)
             print("location: %s" % location)
             print("created_at: %s" % created_at)
             print("hashtags: %s" % hashtags)
+            # print(status)
             new_entry['screen_name'].append(screen_name)
             new_entry['created_at'].append(created_at)
             new_entry['location'].append(location)
