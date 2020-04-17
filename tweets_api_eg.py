@@ -4,6 +4,7 @@
 
 import tweepy
 from settings import token
+from settings import us_states
 import numpy as np
 import pandas as pd
 import os
@@ -62,8 +63,10 @@ def keywords(api):
                             lang='en', # Language code (follows ISO 639-1 standards)
                             include_rts=False, # rewteets included?
                             wait_on_rate_limit=True, # avoid limits violence 
+                            since='2020-04-01',
+                            # geocode = '37.781157, -122.398720, 1mi', # area coordicates 19.50139 to 64.85694 and longitude from -161.75583 to -68.01197
                             tweet_mode='extended') 
-
+    
     for page in results.pages():
         new_entry = {
             'screen_name': [], 
@@ -82,13 +85,15 @@ def keywords(api):
                 text = status.retweeted_status.full_text
             except AttributeError:  # Not a Retweet
                 text = status.full_text
+            # collect USA based
+            location = status.user.location
+            if location == None:
+                continue
+            elif location.split(' ')[-1] not in us_states:
+                continue
+
             screen_name = status.user.screen_name
             source = status.source
-            location = status.user.location
-            try:
-                print("place: ", status.place)
-            except:
-                print("coordinates: ", status.coordinates)
             created_at = status.created_at
             hashtags = ", ".join([t['text'] for t in status.entities['hashtags'] if len(t) > 0])
             
@@ -96,6 +101,9 @@ def keywords(api):
             print("source: %s" % status.source)
             print("screen_name: %s" % screen_name)
             print("location: %s" % location)
+            print(location.split(' '))
+            print(location.split(' ')[-1])
+
             print("created_at: %s" % created_at)
             print("hashtags: %s" % hashtags)
             # print(status)

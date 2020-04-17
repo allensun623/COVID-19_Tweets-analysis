@@ -1,5 +1,6 @@
 import tweepy
 from settings import token
+from settings import us_states
 import numpy as np
 import pandas as pd
 import os
@@ -45,10 +46,12 @@ class TweetsKeyword():
             if count_pages % 100 == 0: 
                 # under the data folder + time + file name
                 file_name = self.folder + '/' + str(datetime.datetime.now().strftime("%Y-%m-%dT%H-%M")) + '_' + self.file_name 
-
             # open local file
             if os.path.exists(file_name):
-                df = pd.read_csv(file_name, header=0)
+                try: 
+                    df = pd.read_csv(file_name, header=0)
+                except: 
+                    df = pd.DataFrame(columns=cols)
             else:
                 df = pd.DataFrame(columns=cols)
             
@@ -59,8 +62,6 @@ class TweetsKeyword():
             
             # collect data
             for status in page:
-                count_tweets += 1
-                print("====================================================")
                 # printing the full text stored inside the tweet object
                 try:
                     text = status.retweeted_status.full_text
@@ -68,9 +69,15 @@ class TweetsKeyword():
                     text = status.full_text
                 screen_name = status.user.screen_name
                 source = status.source
+                # collect USA based
                 location = status.user.location
+                if location == None:
+                    continue
+                elif location.split(' ')[-1] not in us_states:
+                    continue
                 created_at = status.created_at
                 hashtags = ", ".join([t['text'] for t in status.entities['hashtags'] if len(t) > 0])
+                print("====================================================")
                 print("screen_name: %s" % screen_name)
                 print("created_at: %s" % created_at)
                 print("location: %s" % location)
@@ -83,6 +90,7 @@ class TweetsKeyword():
                 new_entry['hashtags'].append(hashtags)
                 new_entry['source'].append(source)
                 new_entry['text'].append(text)
+                count_tweets += 1
 
             # create a dataframe to add data from current page into it
             tweet_page_df = pd.DataFrame(data=new_entry)
