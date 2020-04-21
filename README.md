@@ -46,8 +46,9 @@ keywords = ['COVID']
 
 ## 2. Data Analysis
 ### 2.1 Sentiment Analysis
-sample datasets are in the folder `tweets` for analysis collected on **4/21/2020**
-In the Jupyter Notebook file `sentiment_analysis.ipynb`
+Sample datasets are in the folder `tweets` for analysis collected on **4/21/2020**.
+
+In the Jupyter Notebook file `sentiment_analysis.ipynb`.
 
 
 ## Notes
