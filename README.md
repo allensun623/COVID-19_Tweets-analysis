@@ -45,6 +45,7 @@ keywords = ['COVID']
 
 ## 2. Data Analysis
 ### 2.1 Sentiment Analysis
+sample datasets are in folder `tweets` for analysis collected on **April.21, 2020**
 
 
 ## Notes
