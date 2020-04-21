@@ -1,5 +1,5 @@
 # COVID-19_Tweets-analysis
-In case someone has pushed new changes ahead, please check **`git status`**, and do **`git pull`** if necessary every time before you want to make some changes.
+In case any other team member has pushed new changes ahead, please check **`git status`**, and do **`git pull`** if necessary every time before you want to make some changes.
 
 ## 1. TWEETS Collecting
 
