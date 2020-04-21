@@ -26,9 +26,6 @@ class TweetsKeyword():
         """
         Finding Tweets Using a Keyword
         """
-        # write in to file
-        file = self.file_name
-        api = self.api_token(self.token)
         #columns of the csv file
         cols = ['screen_name', # user id
                 'created_at', # tweet created time
@@ -40,6 +37,9 @@ class TweetsKeyword():
         count_tweets = 0 # count total tweets scrapied
         count_pages = 0  # count total pages scrapied
 
+        # tweepy api
+        api = self.api_token(self.token)
+        
         # foreach through all tweets pulled
         results = tweepy.Cursor(api.search, 
                                 q=self.keywords, # The search term you want to find
@@ -57,13 +57,18 @@ class TweetsKeyword():
                 # under the data folder + time + file name
                 file_name = self.folder + '/' + str(datetime.datetime.now().strftime("%Y-%m-%dT%H-%M")) + '_' + self.file_name 
             
-            # initial entry dictionary
-            new_entry = {}
-            for i in cols:
-                new_entry[i] = []
+            # initial entry dictionary for every page
+            new_entry = {i:[] for i in cols}
             
             # collect data
             for status in page:
+                # collect location in USA
+                location = status.user.location
+                if location == None:
+                    continue
+                # location forms included in us_state in settings
+                elif location.split(' ')[-1] not in us_states:
+                    continue
                 # printing the full text stored inside the tweet object
                 try:
                     text = status.retweeted_status.full_text
@@ -71,12 +76,6 @@ class TweetsKeyword():
                     text = status.full_text
                 screen_name = status.user.screen_name
                 source = status.source
-                # collect USA based
-                location = status.user.location
-                if location == None:
-                    continue
-                elif location.split(' ')[-1] not in us_states:
-                    continue
                 created_at = status.created_at
                 hashtags = ", ".join([t['text'] for t in status.entities['hashtags'] if len(t) > 0])
                 print("====================================================")
@@ -102,38 +101,9 @@ class TweetsKeyword():
             print("================================================")
             print("Total pages finished so far: %i" % count_pages)
             print("Total tweets colleted so far: %i" % count_tweets)
-            # if not os.path.isfile(file_name):
-            #     df_page.to_csv(file_name, mode='a', columns=cols, index=False, encoding='utf-8')
-            # # else it exists so append without writing the header
-            # else: 
-            #     df_page.to_csv(file_name, mode='a', columns=cols, index=False, encoding='utf-8', header=False)
+            
             # write data into file
             # if file does not exist write header 
             with open(file_name, 'a') as f:
                 df_page.to_csv(f, mode='a', header=not f.tell(), columns=cols, index=False, encoding='utf-8')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

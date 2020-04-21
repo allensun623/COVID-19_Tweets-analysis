@@ -48,8 +48,11 @@ keywords = ['COVID']
 ### 2.1 Sentiment Analysis
 Sample datasets are in the folder `tweets` for analysis collected on **4/21/2020**.
 
-In the Jupyter Notebook file `sentiment_analysis.ipynb`.
+In the Jupyter Notebook file **[sentiment_analysis.ipynb](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/sentiment_analysis.ipynb)**.
 
+## Task Lists
+- [ ]  1) automating the tweets collection.
+- [ ]  2) finding co-relation between linear graph for cases and tweets for different states.
 
 ## Notes
 - It took 3 hours to collect around 150K tweets, and the timeline showed that these tweets were posted within just past 1 hours. It means people are posting tweets much faster than we could collect. 
