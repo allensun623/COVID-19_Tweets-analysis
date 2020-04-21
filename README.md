@@ -1,4 +1,5 @@
 # COVID-19_Tweets-analysis
+In case someone has pushed new changes ahead, please check **`git status`**, and do **`git pull`** if necessary every time before you want to make some changes.
 
 ## 1. TWEETS Collecting
 
@@ -45,7 +46,7 @@ keywords = ['COVID']
 
 ## 2. Data Analysis
 ### 2.1 Sentiment Analysis
-sample datasets are in folder `tweets` for analysis collected on **April.21, 2020**
+sample datasets are in the folder `tweets` for analysis collected on **4/21/2020**
 
 
 ## Notes
