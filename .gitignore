@@ -10,6 +10,7 @@ tweets-covid-19.csv
 # ignore irrelevant system files
 .pyc 
 .DS_Store
+__pycache__
 
 # ignore test dataset in the folder
 /test_data
