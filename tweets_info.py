@@ -37,7 +37,8 @@ class TweetsKeyword():
                                 count=100, # count per status page, max/100
                                 lang='en', # Language code (follows ISO 639-1 standards)
                                 include_rts=False, # rewteets included?
-                                wait_on_rate_limit=True, # avoid limits violence 
+                                wait_on_rate_limit=True, # avoid limits violence, pause for 15min 
+                                wait_on_rate_limit_notify=True, # send a notification while reaching rate limit
                                 tweet_mode='extended') 
 
         for page in results.pages():
