@@ -13,6 +13,15 @@ class TweetsKeyword():
         self.keywords = keywords
         self.folder = folder
 
+    def api_token(self, token):
+        # Creating the authentication object
+        auth = tweepy.OAuthHandler(token['consumer_key'], token['consumer_secret'])
+        # Setting your access token and secret
+        auth.set_access_token(token['access_token'], token['access_token_secret'])
+        # Creating the API object while passing in auth information
+        api = tweepy.API(auth)
+        return api
+
     def collect_info(self):
         """
         Finding Tweets Using a Keyword
@@ -43,18 +52,10 @@ class TweetsKeyword():
 
         for page in results.pages():
             # every 100 pages, store as a single file with timeline
-            # it would take long time to read and write a large dataset
+            # it would take a long while to read and write a large dataset
             if count_pages % 100 == 0: 
                 # under the data folder + time + file name
                 file_name = self.folder + '/' + str(datetime.datetime.now().strftime("%Y-%m-%dT%H-%M")) + '_' + self.file_name 
-            # open local file
-            if os.path.exists(file_name):
-                try: 
-                    df = pd.read_csv(file_name, header=0)
-                except: 
-                    df = pd.DataFrame(columns=cols)
-            else:
-                df = pd.DataFrame(columns=cols)
             
             # initial entry dictionary
             new_entry = {}
@@ -94,25 +95,23 @@ class TweetsKeyword():
                 count_tweets += 1
 
             # create a dataframe to add data from current page into it
-            tweet_page_df = pd.DataFrame(data=new_entry)
+            df_page = pd.DataFrame(data=new_entry)
 
             # screen results processing
             count_pages += 1
             print("================================================")
             print("Total pages finished so far: %i" % count_pages)
             print("Total tweets colleted so far: %i" % count_tweets)
+            # if not os.path.isfile(file_name):
+            #     df_page.to_csv(file_name, mode='a', columns=cols, index=False, encoding='utf-8')
+            # # else it exists so append without writing the header
+            # else: 
+            #     df_page.to_csv(file_name, mode='a', columns=cols, index=False, encoding='utf-8', header=False)
             # write data into file
-            csv_file = open(file_name, 'a' ,encoding='utf-8')
-            tweet_page_df.to_csv(csv_file, mode='a', columns=cols, index=False, encoding="utf-8")
+            # if file does not exist write header 
+            with open(file_name, 'a') as f:
+                df_page.to_csv(f, mode='a', header=not f.tell(), columns=cols, index=False, encoding='utf-8')
 
-    def api_token(self, token):
-        # Creating the authentication object
-        auth = tweepy.OAuthHandler(token['consumer_key'], token['consumer_secret'])
-        # Setting your access token and secret
-        auth.set_access_token(token['access_token'], token['access_token_secret'])
-        # Creating the API object while passing in auth information
-        api = tweepy.API(auth)
-        return api
 
 
 
