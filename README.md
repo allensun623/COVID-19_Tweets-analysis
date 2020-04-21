@@ -13,7 +13,8 @@ There are three examples of collecting tweets:
 - Example 3: Finding Tweets Using a Keyword
 
 ### Main class
-- In the python file **[main.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/main.py)**, set parameters `api token`, `folder`, `file name`, and `keywords`. Run `main.py` to collect tweets with keywords.
+- In the python file **[main.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/main.py)**, set parameters `api token`, `folder`, `file name`, and `keywords`. 
+Run `main.py` to collect tweets with keywords.
 ```
 # api token
 api_token = token
@@ -47,6 +48,7 @@ keywords = ['COVID']
 ## 2. Data Analysis
 ### 2.1 Sentiment Analysis
 sample datasets are in the folder `tweets` for analysis collected on **4/21/2020**
+In the Jupyter Notebook file `sentiment_analysis.ipynb`
 
 
 ## Notes
