@@ -1,6 +1,9 @@
 import tweepy
 from settings import token
 from settings import us_states
+from settings import states
+from settings import states_abb_dic
+from settings import states_full_dic
 import numpy as np
 import pandas as pd
 import os
@@ -30,6 +33,8 @@ class TweetsKeyword():
         cols = ['screen_name', # user id
                 'created_at', # tweet created time
                 'location', # location
+                'state_abb', # abbreviation of state
+                'state',
                 'source', # tweet source: phone, web, ...
                 'hashtags', 
                 'text']
@@ -69,6 +74,8 @@ class TweetsKeyword():
                 # location forms included in us_state in settings
                 elif location.split(' ')[-1] not in us_states:
                     continue
+                # extract abbreviation of state and state from location
+                state_abb, state = self.is_state(location)
                 # printing the full text stored inside the tweet object
                 try:
                     text = status.retweeted_status.full_text
@@ -88,6 +95,8 @@ class TweetsKeyword():
                 new_entry['screen_name'].append(screen_name)
                 new_entry['created_at'].append(created_at)
                 new_entry['location'].append(location)
+                new_entry['state_abb'].append(state_abb)
+                new_entry['state'].append(state)
                 new_entry['hashtags'].append(hashtags)
                 new_entry['source'].append(source)
                 new_entry['text'].append(text)
@@ -107,3 +116,20 @@ class TweetsKeyword():
             with open(file_name, 'a') as f:
                 df_page.to_csv(f, mode='a', header=not f.tell(), columns=cols, index=False, encoding='utf-8')
 
+    def is_state(self, x):
+        # return state name and its abbreviation
+        for s in x.split(', '):
+            if s in states:
+                if s in states_abb_dic:
+                    return s, states_abb_dic[s]
+                else: 
+                    return states_full_dic[s], s
+                    
+        for s in x.split(' '):
+            if s in states:
+                if s in states_abb_dic:
+                    return s, states_abb_dic[s]
+                else: 
+                    return states_full_dic[s], s
+
+        return np.nan, np.nan

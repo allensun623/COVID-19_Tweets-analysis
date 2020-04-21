@@ -39,6 +39,7 @@ keywords = ['COVID']
     cols = ['screen_name', # user id
             'created_at', # tweet created time
             'location', # location
+            'state',
             'source', # tweet source: phone, web, ...
             'hashtags', 
             'text']
@@ -46,7 +47,7 @@ keywords = ['COVID']
 
 ## 2. Data Analysis
 ### 2.1 Sentiment Analysis
-Sample datasets are in the folder `tweets` for analysis collected on **4/21/2020**.
+There are sample datasets stored in the folder `tweets` for analysis collected on **4/21/2020**.
 
 In the Jupyter Notebook file **[sentiment_analysis.ipynb](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/sentiment_analysis.ipynb)**.
 
