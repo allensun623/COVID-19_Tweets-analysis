@@ -61,8 +61,10 @@ In the Jupyter Notebook file **[sentiment_analysis.ipynb](https://github.com/All
     - Positive score (0,1]
 
 - United States Heatmap of Tweets Related to COVID-19
-e.g.
-|<img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/heatmap.png" width="300px"/>|
+
+    - e.g.
+
+|<img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/heatmap.png"/>|
 
 ## Task Lists
 - [ ]  1) automating the tweets collection.
