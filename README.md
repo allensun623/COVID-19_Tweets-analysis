@@ -60,7 +60,7 @@ In the Jupyter Notebook file **[sentiment_analysis.ipynb](https://github.com/All
     - Neutral  score   0
     - Positive score (0,1]
 
-- United States Heatmap of Tweets Related to COVID-19. e.g.
+- United States Heatmap of Tweets Related to COVID-19. e.g. heapmap based on sample1.
 
 <img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/heatmap.png"/>
 
