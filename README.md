@@ -71,3 +71,6 @@ In the Jupyter Notebook file **[sentiment_analysis.ipynb](https://github.com/All
 ## Notes
 - It took 3 hours to collect around 150K tweets, and the timeline showed that these tweets were posted within just past 1 hours. It means people are posting tweets much faster than we could collect. 
 - What else infomation should we extract from a each single tweet? Above `cols` shows what we want to extract so far.
+- Rate Limit.
+    - wait_on_rate_limit. Whether or not to automatically wait for rate limits to replenish. Rate limits are divided into 15 minute intervals.  
+    - Total Requests Limit. For each free API key, there is a limit for monthly requests: up tp 250. 
