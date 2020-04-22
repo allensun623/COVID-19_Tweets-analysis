@@ -39,6 +39,7 @@ keywords = ['COVID']
     cols = ['screen_name', # user id
             'created_at', # tweet created time
             'location', # location
+            'state_abb', # abbreviation of state
             'state',
             'source', # tweet source: phone, web, ...
             'hashtags', 
@@ -50,6 +51,18 @@ keywords = ['COVID']
 There are sample datasets stored in the folder `tweets` for analysis collected on **4/21/2020**.
 
 In the Jupyter Notebook file **[sentiment_analysis.ipynb](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/sentiment_analysis.ipynb)**.
+- Data preprocessing
+    - lower case
+    - remove punctuation
+    - remove stop words
+- Sentiment classification with **TextBlob**
+    - Negative score [-1,0)
+    - Neutral  score   0
+    - Positive score (0,1]
+
+- United States Heatmap of Tweets Related to COVID-19
+e.g.
+|<img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/heatmap.png" width="300px"/>|
 
 ## Task Lists
 - [ ]  1) automating the tweets collection.
