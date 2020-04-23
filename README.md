@@ -12,8 +12,13 @@ There are three examples of collecting tweets:
 - Example 2: Tweets from a Specific User
 - Example 3: Finding Tweets Using a Keyword
 
-### Main class
-- In the python file **[main.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/main.py)**, set parameters `api token`, `folder`, `file name`, and `keywords`. Run `main.py` to collect tweets with keywords.
+### Collect data
+#### 1. Set up API key
+- In the **[settings.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/settings.py)**, you can use your own token.
+
+    - **[Twitter Data Mining: A Guide to Big Data Analytics Using Python](https://chatbotslife.com/twitter-data-mining-a-guide-to-big-data-analytics-using-python-4efc8ccfa219)** is a tutorial of how to apply for a developer ID and how to utilize it. 
+#### 2. Set up argument in main file
+- Main class. In the python file **[main.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/main.py)**, set parameters `api token`, `folder`, `file name`, and `keywords`. Run `main.py` to collect tweets with keywords.
 ```
 # api token
 api_token = token
@@ -25,11 +30,6 @@ folder = 'test_data'
 # 'COVID-19', 'COVID19', 'Covid_19', 'CoronavirusPandemic', 'CoronavirusOutbreak','CoronaVirusUpdate'
 keywords = ['COVID']
 ```
-
-- In the **[settings.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/settings.py)**, you can use your own token.
-
-    - **[Twitter Data Mining: A Guide to Big Data Analytics Using Python](https://chatbotslife.com/twitter-data-mining-a-guide-to-big-data-analytics-using-python-4efc8ccfa219)** is a tutorial of how to apply for a developer ID and how to utilize it. 
-
 
 - **[tweets_info.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/tweets_info.py)** is a Python class to collect tweets
 
@@ -60,7 +60,7 @@ In the Jupyter Notebook file **[sentiment_analysis.ipynb](https://github.com/All
     - Neutral  score   0
     - Positive score (0,1]
 
-- United States Heatmap of Tweets Related to COVID-19. e.g. Following heapmap was decipted based on dataset of sample1.
+- United States Heatmap of Tweets Related to COVID-19. e.g. Following heapmap was depicted based on dataset of sample1.
 
 <img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/heatmap.png"/>
 
