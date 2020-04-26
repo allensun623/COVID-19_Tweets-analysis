@@ -16,3 +16,4 @@ __pycache__/
 
 # ignore test dataset in the folder
 /test_data
+/jsonl
