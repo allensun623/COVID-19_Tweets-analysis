@@ -3,6 +3,8 @@ import jsonlines
 import numpy as np 
 import pandas as pd
 
+from pathlib import Path
+
 from settings import token
 from settings import us_states
 from settings import states
@@ -11,7 +13,34 @@ from settings import states_full_dic
 
 import time
 
+def main():
+    start = time.time()
+    iterate_dir()
+    stop = time.time()
+    print("Run time: %f" % (stop-start))
+
+
+def iterate_dir():
+    """
+    Iterate jsonl files in each directory
+    """
+    data_dirs = ['jsonl/2020-01']
+    for data_dir in data_dirs:
+        count_files = 1
+        jsonl_list = list(Path(data_dir).glob('**/*.jsonl'))
+        for path in jsonl_list:
+            print("================================================================")
+            print("Extracting at file %i out of %i" % (count_files, len(jsonl_list)))
+            print(path)
+            read_jsonl(path)
+            count_files += 1   
+
 def read_jsonl(file_name):
+    """
+    read a single jsonl file and extrac cols from each tweet 
+    store as datafram in a csv file 
+    """
+
     #columns of the csv file
     cols = ['id_str', # user id
             'created_at', # tweet created time
@@ -61,8 +90,9 @@ def read_jsonl(file_name):
             count_tweets += 1
             # create a dataframe to add data from current page into it
     df = pd.DataFrame(data=new_entry) 
-    with open(file_name+'.csv', 'a') as f:
-        df.to_csv(f, mode='a', header=not f.tell(), columns=cols, index=False, encoding='utf-8')
+    file_path_name = str(file_name) + '.csv'
+    with open(file_path_name, 'w') as f:
+        df.to_csv(f, columns=cols, index=False, encoding='utf-8')
    
     print("US tweets: %i" % count_tweets)
 
@@ -84,12 +114,6 @@ def is_state(x):
 
     return np.nan, np.nan
 
-def main():
-    start = time.time()
-    file_name = 'jsonl/2020-01/coronavirus-tweet-id-2020-01-31-22.jsonl'
-    read_jsonl(file_name)
-    stop = time.time()
-    print("Run time: %f" % (stop-start))
 
 
 if __name__ == '__main__':
