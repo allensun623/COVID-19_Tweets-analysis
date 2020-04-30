@@ -6,10 +6,15 @@ tweets-covid-19.csv
 /.DS_Store
 /.idea
 /__pycache__
+/.ipynb_checkpoints
 
 # ignore irrelevant system files
 .pyc 
 .DS_Store
+__pycache__/
+.ipynb_checkpoints/
 
 # ignore test dataset in the folder
 /test_data
+/jsonl
+/csv
