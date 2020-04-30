@@ -16,5 +16,9 @@ df.columns = df.iloc[0]
 # Delete first row to avoid confusing it as a country
 df = df.drop(0, axis=0)
 
+# Add date column to distinguish daily data
+idx=0
+df.insert(loc=idx, column='Date', value=date.today())
+
 file_name = 'USAData/'+ str(date.today()) + '.csv'
 df.to_csv(file_name, sep=',', index=False)
