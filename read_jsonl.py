@@ -10,30 +10,43 @@ from settings import us_states
 from settings import states
 from settings import states_abb_dic
 from settings import states_full_dic
+from tqdm import tqdm
 
 import time
 
 def main():
     start = time.time()
-    iterate_dir()
+    data_dirs = ['jsonl/2020-02']
+    jsonl_iterate_dir(data_dirs)
     stop = time.time()
     print("Run time: %f" % (stop-start))
 
 
-def iterate_dir():
+def jsonl_iterate_dir(data_dirs):
     """
     Iterate jsonl files in each directory
     """
-    data_dirs = ['jsonl/2020-01']
     for data_dir in data_dirs:
-        count_files = 1
+        count_files = 0
         jsonl_list = list(Path(data_dir).glob('**/*.jsonl'))
-        for path in jsonl_list:
-            print("================================================================")
-            print("Extracting at file %i out of %i" % (count_files, len(jsonl_list)))
-            print(path)
-            read_jsonl(path)
-            count_files += 1   
+        # jsonl_list_new = []
+        # # check the jsonl if already exit
+        # for path in jsonl_list:
+        #     jsonl_path = path.with_suffix('.jsonl')
+        #     if jsonl_path.is_file():
+        #         print('skipping json file already exists: {}'.format(jsonl_path))
+        #         continue
+        #     jsonl_list_new.append(jsonl_path)
+
+        # start extrating
+        print("=============================================================================")
+        print("Extracing jsonl files...")
+        with tqdm(total=len(jsonl_list)) as pbar:
+            for path in jsonl_list:
+                jsonl_path = path.with_suffix('.jsonl')
+                print("Extracing at file: ", path)
+                read_jsonl(jsonl_path)
+                pbar.update(1) 
 
 def read_jsonl(file_name):
     """

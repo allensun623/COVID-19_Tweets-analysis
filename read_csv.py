@@ -1,8 +1,9 @@
 import numpy as np 
 import pandas as pd
-
+import re
 from pathlib import Path
 import time
+from tqdm import tqdm
 
 from settings import token
 from settings import us_states
@@ -17,56 +18,110 @@ from textblob import TextBlob
 
 def main():
     start = time.time()
-    iterate_dir()
+    data_dirs = ['jsonl/2020-02']
+    csv_iterate_dir(data_dirs)
     stop = time.time()
     print("================================================================")
     print("Run time: %f" % (stop-start))
 
 
-def iterate_dir():
+def csv_iterate_dir(data_dirs):
     """
     Iterate jsonl files in each directory
     """
-    data_dirs = ['csv/2020-01']
     for data_dir in data_dirs:
-        count_files = 1
         # create a df to store info of cols for each month
         cols = ['id_str', 'created_at', 'state', 'sentiment', 'text_clean']
+        
         df_month = pd.DataFrame(columns = cols)
         # list of csv file in current directory
         csv_list = list(Path(data_dir).glob('**/*.csv'))
-        for path in csv_list:
-            print("================================================================")
-            print("Extracting at file %i out of %i" % (count_files, len(csv_list)))
-            print(path)
-            df = read_csv(path, cols)
-            df_month = pd.concat([df_month, df])
-            count_files += 1 
+        print("=============================================================================")
+        print("Reading csv files...")
+        print("Data preprocessing and snetiment analyzing tweets from csv files...")
+        with tqdm(total=len(csv_list)) as pbar:
+            for path in csv_list:
+                csv_path = path.with_suffix('.csv')
+                df = read_csv(path, cols)
+                df_month = pd.concat([df_month, df])
+                pbar.update(1) 
 
-        with open(str(data_dir+'.csv'), 'w') as f:
-            df_month.to_csv(f, index=False, encoding='utf-8') 
+        # if file does not exist write header 
+        with open(str(data_dir+'.csv'), 'a') as f:
+            df_month.to_csv(f, mode='a', index=False, header=not f.tell(), encoding='utf-8') 
+        
+        print("Finished!!!")
 
 
-def read_csv(path, cols):    
-    df = pd.read_csv(path)
-    df = data_prepross(df)
+def read_csv(path, cols): 
+    # 1. load files   
+    df = pd.read_csv(path, engine='python')
+    # 2. data preprocess
+    df = data_preprocess(df)
+    # 3. sentiment analysis
     df = sentiment_analysis(df)
     df = df[cols]
     return df
 
-def data_prepross(df):    
+def data_preprocess(df):    
     # Data preprocess
-    # Transform string data and remove punctuation and stop words
     df['text_clean'] = df['text']
     # lower case
     df['text_clean'] = df['text_clean'].apply(lambda x: str(x).lower())
-    # remove punctuation
-    df['text_clean'] = df['text_clean'].apply(lambda x: x.translate(str.maketrans('', '', punctuation)))
+    # remove unicode
+    df['text_clean'] = df['text_clean'].apply(lambda x: remove_unicode(x))
     # remove stop words
-    nltk_stop = stopwords.words('english')                                          
-    df['text_clean'] = df['text_clean'].apply(lambda x: ' '.join([c for c in x.split() if c not in nltk_stop])) 
+    df['text_clean'] = df['text_clean'].apply(lambda x: remove_stop_words(x)) 
+    # replace url address with url
+    df['text_clean'] = df['text_clean'].apply(lambda x: remove_url(x))
+    #  removes hastag in front of a word
+    df['text_clean'] = df['text_clean'].apply(lambda x: remove_hashtag(x))
+    # removes integers
+    df['text_clean'] = df['text_clean'].apply(lambda x: remove_numbers(x))
+    # removes emoticons from text
+    df['text_clean'] = df['text_clean'].apply(lambda x: remove_emoticons(x))
+    # remove punctuation
+    df['text_clean'] = df['text_clean'].apply(lambda x: remove_punctuation(x))
 
     return df
+
+def remove_stop_words(text):
+    """Remove stop words"""
+    nltk_stop = stopwords.words('english')                                          
+    text = ' '.join([c for c in text.split() if c not in nltk_stop]) 
+    return text
+
+def remove_unicode(text):
+    """ Removes unicode strings like "\u002c" and "x96" """
+    text = re.sub(r'(\\u[0-9A-Fa-f]+)',r'', text)       
+    text = re.sub(r'[^\x00-\x7f]',r'',text)
+    return text
+
+def remove_url(text):
+    """ Replaces url address with "url" """
+    text = re.sub('((www\.[^\s]+)|(https?://[^\s]+))','',text)
+    return text    
+
+def remove_hashtag(text):
+    """ Removes hastag in front of a word """
+    text = re.sub(r'#([^\s]+)', r'\1', text)
+    return text
+
+def remove_numbers(text):
+    """ Removes integers """
+    text = ''.join([i for i in text if not i.isdigit()])         
+    return text
+
+def remove_emoticons(text):
+    """ Removes emoticons from text """
+    text = re.sub(':\)|;\)|:-\)|\(-:|:-D|=D|:P|xD|X-p|\^\^|:-*|\^\.\^|\^\-\^|\^\_\^|\,-\)|\)-:|:\'\(|:\(|:-\(|:\S|T\.T|\.\_\.|:<|:-\S|:-<|\*\-\*|:O|=O|=\-O|O\.o|XO|O\_O|:-\@|=/|:/|X\-\(|>\.<|>=\(|D:', '', text)
+    return text
+
+def remove_punctuation(text):
+    """remove punctuation"""
+    text =  text.translate(str.maketrans('', '', punctuation))
+    return text
+
 
 def sentiment_analysis(df):
     # Sentiment analysis
