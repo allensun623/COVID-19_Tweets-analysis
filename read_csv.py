@@ -38,7 +38,7 @@ def csv_iterate_dir(data_dirs):
         csv_list = list(Path(data_dir).glob('**/*.csv'))
         print("=============================================================================")
         print("Reading csv files...")
-        print("Data preprocessing and snetiment analyzing tweets from csv files...")
+        print("Data preprocessing and sentiment analyzing tweets from csv files...")
         with tqdm(total=len(csv_list)) as pbar:
             for path in csv_list:
                 csv_path = path.with_suffix('.csv')

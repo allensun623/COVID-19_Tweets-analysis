@@ -1,7 +1,6 @@
 import gzip
 import shutil
 from pathlib import Path
-from sh import gunzip
 from tqdm import tqdm
 
 def main():
@@ -20,12 +19,6 @@ def unzip_gz(data_dirs):
             # unzip
             gz_list_new.append(path)
 
-        # start unzip
-        # with tqdm(total=len(gz_list_new)) as pbar:
-        #     for path in gz_list_new:
-        #         gz_path = path.with_suffix('.gz')
-        #         gunzip(str(gz_path))
-        #         pbar.update(1) 
         print("Unzipping gz giles...")
         invalid_f = 0
         with tqdm(total=len(gz_list_new)) as pbar:

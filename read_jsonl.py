@@ -107,7 +107,7 @@ def read_jsonl(file_name):
     with open(file_path_name, 'w') as f:
         df.to_csv(f, columns=cols, index=False, encoding='utf-8')
    
-    print("US tweets: %i" % count_tweets)
+    print("Tweets collected by location US: %i" % count_tweets)
 
 def is_state(x):
     # return state name and its abbreviation

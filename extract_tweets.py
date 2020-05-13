@@ -5,7 +5,7 @@ from unzip_gz import unzip_gz
 
 def main():
     # change to the target data_dirs
-    data_dirs = ['jsonl/2020-02']
+    data_dirs = ['jsonl/2020-03']
     gz_jsonl_csv_df(data_dirs)
 
 def gz_jsonl_csv_df(data_dirs):
