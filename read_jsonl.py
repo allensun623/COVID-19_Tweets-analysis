@@ -2,6 +2,7 @@ import json
 import jsonlines
 import numpy as np 
 import pandas as pd
+import os
 
 from pathlib import Path
 
@@ -16,7 +17,7 @@ import time
 
 def main():
     start = time.time()
-    data_dirs = ['jsonl/2020-02']
+    data_dirs = ['jsonl/2020-03']
     jsonl_iterate_dir(data_dirs)
     stop = time.time()
     print("Run time: %f" % (stop-start))
@@ -106,8 +107,9 @@ def read_jsonl(file_name):
     file_path_name = str(file_name) + '.csv'
     with open(file_path_name, 'w') as f:
         df.to_csv(f, columns=cols, index=False, encoding='utf-8')
-   
     print("Tweets collected by location US: %i" % count_tweets)
+    # delete jsonl file after being extracted
+    os.remove(file_name)
 
 def is_state(x):
     # return state name and its abbreviation

@@ -18,7 +18,7 @@ from textblob import TextBlob
 
 def main():
     start = time.time()
-    data_dirs = ['jsonl/2020-02']
+    data_dirs = ['jsonl/2020-03']
     csv_iterate_dir(data_dirs)
     stop = time.time()
     print("================================================================")
