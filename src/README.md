@@ -19,5 +19,8 @@ This is for daily sentiment
 - This is for tweets analysis.
 - They are accumulated tweets for each state
 
-## * **[us_case_tweet_sentiment_analysis.csv](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/us_case_tweet_sentiment_analysis.csv)**
+### 4. **[us_case_tweet_sentiment_analysis.csv](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/us_case_tweet_sentiment_analysis.csv)**
 - It conbines three files above
+
+### 5. **[us_correlation_analysis.csv](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/us_correlation_analysis.csv)**
+- This is for correlation analysis.
