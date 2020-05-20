@@ -2,9 +2,8 @@
 In case any other team member has pushed new changes ahead, please check **`git status`**, and do **`git pull`** if necessary every time before you want to make some changes.
 
 ## **[us_sentiment_models.csv](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/us_sentiment_models.csv)**
-- This contains the sentiment reults of for models: afn, ensemble, textblpb, and vader.
+- This contains the sentiment reults of for models: afinn, ensemble, textblob, and Vader.
 - Use this file for correlation analysis.
-
 
 
 ### 1. **[us_cases_analysis.csv](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/us_case_analysis.csv)**
