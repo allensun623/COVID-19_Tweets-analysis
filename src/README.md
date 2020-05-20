@@ -16,7 +16,7 @@ In case any other team member has pushed new changes ahead, please check **`git 
 - They are accumulated tweets for each state
 
 
-### 3. For each sub-folfer: afinn, ensemble, textblob, and vader. Includes: 
+### 3. For each sub-folder: afinn, ensemble, textblob, and vader. Includes: 
 - **us_sentiments_analysis.csv**
 
     This is for daily sentiment 
