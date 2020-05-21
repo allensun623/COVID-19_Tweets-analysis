@@ -69,9 +69,7 @@ def data_preprocess(df):
     # lower case
     df['text_clean'] = df['text_clean'].apply(lambda x: str(x).lower())
     # remove unicode
-    df['text_clean'] = df['text_clean'].apply(lambda x: remove_unicode(x))
-    # remove stop words
-    df['text_clean'] = df['text_clean'].apply(lambda x: remove_stop_words(x)) 
+    df['text_clean'] = df['text_clean'].apply(lambda x: remove_unicode(x)) 
     # remove_url
     df['text_clean'] = df['text_clean'].apply(lambda x: remove_url(x))
     # removes hastag in front of a word
@@ -82,6 +80,8 @@ def data_preprocess(df):
     df['text_clean'] = df['text_clean'].apply(lambda x: remove_emoticons(x))
     # remove punctuation
     df['text_clean'] = df['text_clean'].apply(lambda x: remove_punctuation(x))
+    # remove stop words
+    df['text_clean'] = df['text_clean'].apply(lambda x: remove_stop_words(x))
 
     return df
 
