@@ -72,9 +72,9 @@ def data_preprocess(df):
     df['text_clean'] = df['text_clean'].apply(lambda x: remove_unicode(x))
     # remove stop words
     df['text_clean'] = df['text_clean'].apply(lambda x: remove_stop_words(x)) 
-    # replace url address with url
+    # remove_url
     df['text_clean'] = df['text_clean'].apply(lambda x: remove_url(x))
-    #  removes hastag in front of a word
+    # removes hastag in front of a word
     df['text_clean'] = df['text_clean'].apply(lambda x: remove_hashtag(x))
     # removes integers
     df['text_clean'] = df['text_clean'].apply(lambda x: remove_numbers(x))
