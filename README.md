@@ -28,6 +28,8 @@ The original dataset contains Tweets’ ids dating from January 22th, 2020 to Ma
 
 Used the tool Hydrator to rehydrate the tweet-IDs i.e. to fetch tweets data related to the tweet-IDs using Twitter’s API. 
 
+Run the **[extrac_tweets.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/tree/master/extrac_tweets.py)** 
+
 Filtered the location in the US only by the list in Appendix A. Extracted the attributes of id_str, created_at, location, and text of each tweet and features are categorical values following the steps below:
 
 - 1). Hydrate the tweet-IDs and store them as .gz files.
@@ -64,7 +66,7 @@ Basic data visualization in the file of **[data_visualization.ipynb](https://git
     <!-- - Total Tweets for each state -->
     <img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/tweets_states.png"/>
     <!-- - Word Cloud  -->
-    <img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/tweets_wordcloud.png" width="1000" height="900"/>
+    <img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/tweets_wordcloud.png" width="800" height="700"/>
 
 ### 3.2 Heatmap 
 Heatmap in the file of **[heatmap.ipynb](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/heatmap.ipynb)**
