@@ -110,13 +110,16 @@ Afinn dominats the models, it is applied to analyze each tweet.
 
 
 
-## Task Lists
-- [ ]  1) automating the tweets collection.
-- [ ]  2) finding co-relation between linear graph for cases and tweets for different states.
+## Knowledge Discover(KDD) Process - check list
+- [x]  1) data cleaning
+- [x]  2) data integration
+- [x]  3) data selection
+- [x]  4) transformation
+- [x]  5) data mining
+- [x]  6) pattern evaluation 
+- [x]  7) knowledge presentation
 
 ## Notes
-- It took 3 hours to collect around 150K tweets, and the timeline showed that these tweets were posted within just past 1 hours. It means people are posting tweets much faster than we could collect. 
-- What else infomation should we extract from a each single tweet? Above `cols` shows what we want to extract so far.
 - Rate Limit.
     - wait_on_rate_limit. Whether or not to automatically wait for rate limits to replenish. Rate limits are divided into 15 minute intervals.  
     - Total Requests Limit. For each free API key, there is a limit for monthly requests: up tp 250. 
