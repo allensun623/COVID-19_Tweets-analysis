@@ -95,7 +95,7 @@ Four models applied for sentiment analysis
     - Ensemble
 Run **[Vader-Afinn-Ensemble_F1-score.ipynb](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/Vader-Afinn-Ensemble_F1-score..ipynb)** to evaluate the models obove.
 Results:
-<img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/evalutions.png"/>
+<img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/evalutions.png" width="500" height="250"/>
 F1-score order: Afinn > Vader  > Ensemble > sentistrength> TextBlob
 
 ## 5. Correlation
