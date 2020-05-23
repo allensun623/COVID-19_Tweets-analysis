@@ -31,20 +31,15 @@ The original dataset contains Tweets’ ids dating from January 22th, 2020 to Ma
 - 4. Concatenate all .csv files into separate months.
 Eventually, 15,099,967 tweets were collected, and the size of the dataset dropped from 1TB to 3GB. 
 |Tweets Type            |Number of tweets   |Size of dataset  |
-|-------------          |---------          |---------        |
+|-------------          |----------------   |---------------  |
 | Original dataset      | 101,718,655       |   1 TB          |
 | Filtered dataset      |  15,099,967       |   3 GB          |
 | Preprocessed dataset  |  14,067,351       | 2.5 GB          |
 
 
 
-## 2. Data Analysis
-### 2.1 Sentiment Analysis
-There are sample datasets stored in the folder `tweets` for analysis collected on **4/21/2020**.
-
-In the Jupyter Notebook file **[sentiment_analysis.ipynb](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/sentiment_analysis.ipynb)**:
-- Data preprocessing 
-    Text preprocessing technicks in the **[read_csv.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/read_csv.py)**
+## 2. Data Preprocess
+Text preprocessing technicks in the **[read_csv.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/read_csv.py)**
     - Lower case
     - Remove URL address
     - Remove Unicode
