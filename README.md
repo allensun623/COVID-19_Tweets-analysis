@@ -2,19 +2,21 @@
 In case any other team member has pushed new changes ahead, please check **`git status`**, and do **`git pull`** if necessary every time before you want to make some changes.
 
 ## Enviroment Setup
-(Python 2) Run `pip install -r requirements.txt`
-(Python 3) Run `pip3 install -r requirements.txt`
+- (Python 2) Run `pip install -r requirements.txt`
+- (Python 3) Run `pip3 install -r requirements.txt`
 
 ## Priority
 Data CSV files in **[src](https://github.com/AllenSun7/COVID-19_Tweets-analysis/tree/master/src)**
 
 
 
-## 1. TWEETS Collecting
+## 1. Tweets Collecting Tutorial
+In the subfolder of **[tweets_collecting_tutorial](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/tweets_collecting_tutorial)**, 
+
 
 ### 1.1 Examples
 Under the file
-**[tweets_api_eg.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/tweets_api_eg.py)**
+**[tweets_api_eg.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/tweets_collecting_tutorial/tweets_api_eg.py)**
 
 There are three examples of collecting tweets:
 - Example 1: Your Timeline
@@ -23,11 +25,11 @@ There are three examples of collecting tweets:
 
 ### 1.2 Collect data
 #### 1.2.1 Set up API key
-- In the **[settings.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/settings.py)**, you can use your own token.
+- In the **[settings.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/tweets_collecting_tutorial/settings.py)**, you can use your own token.
 
     - **[Twitter Data Mining: A Guide to Big Data Analytics Using Python](https://chatbotslife.com/twitter-data-mining-a-guide-to-big-data-analytics-using-python-4efc8ccfa219)** is a tutorial of how to apply for a developer ID and how to utilize it. 
 #### 1.2.2 Set up argument in main file
-- Main class. In the python file **[main.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/main.py)**, set parameters `api token`, `folder`, `file name`, and `keywords`. Run `main.py` to collect tweets with keywords.
+- Main class. In the python file **[main.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/tweets_collecting_tutorial/main.py)**, set parameters `api token`, `folder`, `file name`, and `keywords`. Run `main.py` to collect tweets with keywords.
 ```
 # api token
 api_token = token
