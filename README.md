@@ -46,6 +46,7 @@ Eventually, 15,099,967 tweets were collected, and the size of the dataset droppe
 
 ## 2. Data Preprocess
 Text preprocessing technicks in the **[read_csv.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/read_csv.py)**
+
     - Lower case
     - Remove URL address
     - Remove Unicode
@@ -56,10 +57,18 @@ Text preprocessing technicks in the **[read_csv.py](https://github.com/AllenSun7
     - Remove punctuation
 
 ### Data Visualization
-- Word Cloud
+- Basic data visualization in the file of **[data_visualization.ipynb](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/data_visualization.ipynb)**
+    - Daily Tweets
+<img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/daily_tweets.png"/>
+
+    - Total Tweets for each state
+<img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/tweets_states.png"/>
+
+    - Word Cloud 
 <img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/tweets_wordcloud.png"/>
 
-- Heatmap
+- Heatmap in the file of **[heatmap.ipynb](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/heatmap.ipynb)**
+
     - Tweets Heatmap 
 <img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/heatmap_tweets.png"/>
     - Cases Heatmap
