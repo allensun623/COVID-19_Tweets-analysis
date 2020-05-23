@@ -1,6 +1,10 @@
 # COVID-19_Tweets-analysis
 In case any other team member has pushed new changes ahead, please check **`git status`**, and do **`git pull`** if necessary every time before you want to make some changes.
 
+## Enviroment Setup
+(Python 2) Run `pip install -r requirements.txt`
+(Python 3) Run `pip3 install -r requirements.txt`
+
 ## Priority
 Data CSV files in **[src](https://github.com/AllenSun7/COVID-19_Tweets-analysis/tree/master/src)**
 
