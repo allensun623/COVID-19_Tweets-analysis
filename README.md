@@ -87,15 +87,18 @@ Heatmap in the file of **[heatmap.ipynb](https://github.com/AllenSun7/COVID-19_T
     <img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/heatmap_cases.png"/>
 
 ## 4. Algorithems
-Four models applied for sentiment analysis
-    - Afinn
-    - Vader
-    - TextBlob
-    - SentiStrength
-    - Ensemble
+Four models implemented for sentiment analysis with Groud Truth by randomly obtaining 100 tweets from dataset: 
+
+- Afinn
+- Vader
+- TextBlob
+- SentiStrength
+- Ensemble
+
 Run **[Vader-Afinn-Ensemble_F1-score.ipynb](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/Vader-Afinn-Ensemble_F1-score..ipynb)** to evaluate the models obove.
 Results:
-<img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/evalutions.png" width="500" height="250"/>
+<img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/evalutions.png" width="500" height="200"/>
+
 F1-score order: Afinn > Vader  > Ensemble > sentistrength> TextBlob
 
 ## 5. Correlation
