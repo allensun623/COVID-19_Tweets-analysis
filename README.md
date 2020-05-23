@@ -49,19 +49,20 @@ Eventually, 15,099,967 tweets were collected, and the size of the dataset droppe
 - Worldometer
 Dropping useless columns 
 - Twitter data 
-    - 1. Converting the locations to state
-    - 2. Text preprocessing technicks in the **[read_csv.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/read_csv.py)**
+    1. Converting the locations to state
+    2. Text preprocessing technicks in the **[read_csv.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/read_csv.py)**
 
-    - Lower case
-    - Remove URL address
-    - Remove Unicode
-    - Remove stop words
-    - Remove hashtag 
-    - Remove integers
-    - Remove emoticons
-    - Remove punctuation
+        - Lower case
+        - Remove URL address
+        - Remove Unicode
+        - Remove stop words
+        - Remove hashtag 
+        - Remove integers
+        - Remove emoticons
+        - Remove punctuation
+    
 
-    - 3. Removing missing values
+    3. Removing missing values
 - Merging twitter and worldometer data chronologically
 Run **[data_output.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/tree/master/data_output.py)** to output more related csv files, which are stored in **[src](https://github.com/AllenSun7/COVID-19_Tweets-analysis/tree/master/src)**
 
@@ -84,6 +85,27 @@ Heatmap in the file of **[heatmap.ipynb](https://github.com/AllenSun7/COVID-19_T
     <img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/heatmap_tweets.png"/>
     <!-- - Cases Heatmap -->
     <img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/heatmap_cases.png"/>
+
+## 4. Algorithems
+Four models applied for sentiment analysis
+    - Afinn
+    - Vader
+    - TextBlob
+    - SentiStrength
+    - Ensemble
+Run **[Vader-Afinn-Ensemble_F1-score.ipynb](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/Vader-Afinn-Ensemble_F1-score..ipynb)** to evaluate the models obove.
+Results:
+<img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/evalutions.png"/>
+F1-score order: Afinn > Vader  > Ensemble > sentistrength> TextBlob
+
+## 5. Correlation
+Afinn dominats the models, it is applied to analyze each tweet.
+<!-- - sentiments_tweets  -->
+<img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/sentiments_tweets.png"/>
+<!-- - sentiments_cases -->
+<img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/sentiments_cases.png"/>
+<!-- - tweets_cases -->
+<img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/tweets_cases.png"/>
 
 
 
