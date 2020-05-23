@@ -58,6 +58,9 @@ Text preprocessing technicks in the **[read_csv.py](https://github.com/AllenSun7
     - Remove emoticons
     - Remove punctuation
 
+**[COVID-19_Tweets-analysis_Dataset](https://drive.google.com/drive/folders/1eldqmOJw-LYUw5HvRDCMxnH-ZU48cqkE?usp=sharing)** is the dataset for 5 months after being preprocessed.
+
+
 ## 3. Data Visualization
 ### 3.1 Basic data visualization
 Basic data visualization in the file of **[data_visualization.ipynb](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/data_visualization.ipynb)**
