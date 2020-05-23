@@ -95,7 +95,8 @@ Four models implemented for sentiment analysis with Groud Truth by randomly obta
 - SentiStrength
 - Ensemble
 
-Run **[Vader-Afinn-Ensemble_F1-score.ipynb](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/Vader-Afinn-Ensemble_F1-score..ipynb)** to evaluate the models obove.
+Run **[SentiStrengthGroundtruth.ipynb](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/SentiStrengthGroundtruth.ipynb)** and **[SentiStrengthandGroundtruthComparison.ipynb](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/SentiStrengthandGroundtruthComparison.ipynb)** for the model of SentiStrength
+Run **[Vader-Afinn-Ensemble_F1-score.ipynb](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/Vader-Afinn-Ensemble_F1-score.ipynb)** to evaluate the models obove.
 Results:
 <img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/evalutions.png" width="500" height="200"/>
 
