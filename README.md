@@ -64,7 +64,7 @@ Basic data visualization in the file of **[data_visualization.ipynb](https://git
     <!-- - Total Tweets for each state -->
     <img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/tweets_states.png"/>
     <!-- - Word Cloud  -->
-    <img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/tweets_wordcloud.png" width="400" height="400"/>
+    <img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/tweets_wordcloud.png" width="1000" height="900"/>
 
 ### 3.2 Heatmap 
 Heatmap in the file of **[heatmap.ipynb](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/heatmap.ipynb)**
