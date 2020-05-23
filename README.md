@@ -59,18 +59,18 @@ Text preprocessing technicks in the **[read_csv.py](https://github.com/AllenSun7
 ## 3. Data Visualization
 ### 3.1 Basic data visualization
 Basic data visualization in the file of **[data_visualization.ipynb](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/data_visualization.ipynb)**
-    - Daily Tweets
+    <!-- - Daily Tweets -->
     <img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/daily_tweets.png"/>
-    - Total Tweets for each state
+    <!-- - Total Tweets for each state -->
     <img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/tweets_states.png"/>
-    - Word Cloud 
+    <!-- - Word Cloud  -->
     <img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/tweets_wordcloud.png"/>
 
 ### 3.2 Heatmap 
 Heatmap in the file of **[heatmap.ipynb](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/heatmap.ipynb)**
-    - Tweets Heatmap 
+    <!-- - Tweets Heatmap  -->
     <img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/heatmap_tweets.png"/>
-    - Cases Heatmap
+    <!-- - Cases Heatmap -->
     <img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/heatmap_cases.png"/>
 
 ## Task Lists
