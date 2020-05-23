@@ -86,7 +86,7 @@ Heatmap in the file of **[heatmap.ipynb](https://github.com/AllenSun7/COVID-19_T
     <!-- - Cases Heatmap -->
     <img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/heatmap_cases.png"/>
 
-## 4. Algorithems
+## 4. Algorithms
 Four models implemented for sentiment analysis with Groud Truth by randomly obtaining 100 tweets from dataset: 
 
 - Afinn
