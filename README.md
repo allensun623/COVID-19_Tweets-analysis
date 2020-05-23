@@ -24,8 +24,13 @@ In the subfolder of **[tweets_collecting_tutorial](https://github.com/AllenSun7/
 
 #### 1.2.2 Collect data 
 Data was collected by filtering the original dataset under the repository of **[COVID-19-TweetIDs](https://github.com/echen102/COVID-19-TweetIDs)** which contains collected tweets IDs associated with the novel coronavirus COVID-19.
-The original dataset contains Tweets’ ids dating from January 22th, 2020 to May 8th, 2020 with 101,718,655 tweets. Used the tool Hydrator to rehydrate the tweet-IDs i.e. to fetch tweets data related to the tweet-IDs using Twitter’s API. Filtered the location in the US only by the list in Appendix A. Extracted the attributes of id_str, created_at, location, and text of each tweet and features are categorical values following the steps below:
-- 1). rehydrate the tweet-IDs and store them as .gz files.
+The original dataset contains Tweets’ ids dating from January 22th, 2020 to May 8th, 2020 with 101,718,655 tweets. 
+
+Used the tool Hydrator to rehydrate the tweet-IDs i.e. to fetch tweets data related to the tweet-IDs using Twitter’s API. 
+
+Filtered the location in the US only by the list in Appendix A. Extracted the attributes of id_str, created_at, location, and text of each tweet and features are categorical values following the steps below:
+
+- 1). Hydrate the tweet-IDs and store them as .gz files.
 - 2). Unzip the .gz files to .jsonl files
 - 3). Extract relevant tweets and features from .jsonl files and store them as .csv files
 - 4). Concatenate all .csv files into separate months.
