@@ -5,12 +5,11 @@ In case any other team member has pushed new changes ahead, please check **`git 
 - (Python 2) Run `pip install -r requirements.txt`
 - (Python 3) Run `pip3 install -r requirements.txt`
 
-## Priority
-Data CSV files in **[src](https://github.com/AllenSun7/COVID-19_Tweets-analysis/tree/master/src)**
-
 ## 1. Data Collection
 ### 1.1 Worldometer dataset
-Run **[GetData_USA.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/Data_Collection/GetData_USA.py) to scripy the data from **[worldometers.info](worldometers.info)**
+Run **[GetData_USA.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/Data_Collection/GetData_USA.py)** to scripy the data from **[worldometers.info](worldometers.info)**
+
+
 ### 1.2 Tweets dataset
 #### 1.2.1 General Tweets Collecting Tutorial
 In the subfolder of **[tweets_collecting_tutorial](https://github.com/AllenSun7/COVID-19_Tweets-analysis/tree/master/tweets_collection_tutorial)** 
@@ -47,7 +46,11 @@ Eventually, 15,099,967 tweets were collected, and the size of the dataset droppe
 
 
 ## 2. Data Preprocess
-Text preprocessing technicks in the **[read_csv.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/read_csv.py)**
+- Worldometer
+Dropping useless columns 
+- Twitter data 
+    - 1. Converting the locations to state
+    - 2. Text preprocessing technicks in the **[read_csv.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/read_csv.py)**
 
     - Lower case
     - Remove URL address
@@ -57,6 +60,10 @@ Text preprocessing technicks in the **[read_csv.py](https://github.com/AllenSun7
     - Remove integers
     - Remove emoticons
     - Remove punctuation
+
+    - 3. Removing missing values
+- Merging twitter and worldometer data chronologically
+Run **[data_output.py](https://github.com/AllenSun7/COVID-19_Tweets-analysis/tree/master/data_output.py)** to output more related csv files, which are stored in **[src](https://github.com/AllenSun7/COVID-19_Tweets-analysis/tree/master/src)**
 
 **[COVID-19_Tweets-analysis_Dataset](https://drive.google.com/drive/folders/1eldqmOJw-LYUw5HvRDCMxnH-ZU48cqkE?usp=sharing)** is the dataset for 5 months after being preprocessed.
 
@@ -77,6 +84,9 @@ Heatmap in the file of **[heatmap.ipynb](https://github.com/AllenSun7/COVID-19_T
     <img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/heatmap_tweets.png"/>
     <!-- - Cases Heatmap -->
     <img src="https://github.com/AllenSun7/COVID-19_Tweets-analysis/blob/master/src/heatmap_cases.png"/>
+
+
+
 
 ## Task Lists
 - [ ]  1) automating the tweets collection.
